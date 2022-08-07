@@ -1,3 +1,5 @@
+using BusinessLayer.Interface;
+using BusinessLayer.Manager;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using RepositoryLayer.Interface;
+using RepositoryLayer.Repository;
 
 namespace BookStoreBackend
 {
@@ -22,6 +26,9 @@ namespace BookStoreBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserManager, UserManager>();
 
             services.AddSwaggerGen(c =>
             {
