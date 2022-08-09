@@ -11,6 +11,6 @@ namespace CommonLayer.UserModel
         [Required]
         public string Password { get; set; }
         [Required]
-        public long MobileNumber { get; set; }
+        public string MobileNumber { get; set; }
     }
 }

@@ -146,7 +146,7 @@ namespace RepositoryLayer.Repository
                         user.FullName = dataReader["FullName"].ToString();
                         user.EmailID = dataReader["EmailID"].ToString();
                         user.Password = dataReader["Password"].ToString();
-                        user.MobileNumber = Convert.ToInt64(dataReader["MobileNumber"]);
+                        user.MobileNumber = dataReader["MobileNumber"].ToString();
                     }
 
                     con.Close();
@@ -177,7 +177,7 @@ namespace RepositoryLayer.Repository
                         user.FullName = dataReader["FullName"].ToString();
                         user.EmailID = dataReader["EmailID"].ToString();
                         user.Password = dataReader["Password"].ToString();
-                        user.MobileNumber = Convert.ToInt64(dataReader["MobileNumber"]);
+                        user.MobileNumber = dataReader["MobileNumber"].ToString();
                     }
 
                     con.Close();
